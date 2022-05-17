@@ -1,4 +1,4 @@
-{% set version = '0.1-3' %}
+{% set version = "0.1-4" %}
 {% set posix = 'm2-' if win else '' %}
 {% set native = 'm2w64-' if win else '' %}
 
@@ -10,10 +10,10 @@ source:
   url:
     - {{ cran_mirror }}/src/contrib/Rlgt_{{ version }}.tar.gz
     - {{ cran_mirror }}/src/contrib/Archive/Rlgt/Rlgt_{{ version }}.tar.gz
-  sha256: 25947e36501593a0b3c8f5062f90854d3f5649ffc9b7c35e18ba4096cb06c13c
+  sha256: b44c81715d9a38765378b1a347ee7de62dac5b767794304b2d649ce1da7fd086
 
 build:
-  merge_build_host: True  # [win]
+  merge_build_host: true  # [win]
   number: 0
   # Makevars.win:18: recipe for target 'stan_files/SGT.cc' failed
   skip: true  # [win]
@@ -63,13 +63,8 @@ test:
 about:
   home: https://github.com/cbergmeir/Rlgt
   license: GPL-3.0-only
-  summary: An implementation of a number of Global Trend models for time series forecasting that
-    are Bayesian generalizations and extensions of some Exponential Smoothing models.
-    The main differences/additions include 1) nonlinear global trend, 2) Student-t error
-    distribution, and 3) a function for the error size, so heteroscedasticity. The methods
-    are particularly useful for short time series. When tested on the well-known M3
-    dataset, they are able to outperform all classical time series algorithms. The models
-    are fitted with MCMC using the 'rstan' package.
+  summary: An implementation of a number of Global Trend models for time series forecasting that are Bayesian generalizations and extensions of some Exponential Smoothing models. The main differences/additions include 1) nonlinear global trend, 2) Student-t error distribution, and 3) a function for the error size, so heteroscedasticity.
+    The methods are particularly useful for short time series. When tested on the well-known M3 dataset, they are able to outperform all classical time series algorithms. The models are fitted with MCMC using the 'rstan' package.
   license_family: GPL3
   license_file:
     - {{ environ["PREFIX"] }}/lib/R/share/licenses/GPL-3
