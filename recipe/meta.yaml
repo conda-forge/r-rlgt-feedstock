@@ -14,7 +14,7 @@ source:
 
 build:
   merge_build_host: true  # [win]
-  number: 1
+  number: 2
   # Makevars.win:18: recipe for target 'stan_files/SGT.cc' failed
   skip: true  # [win]
   rpaths:
