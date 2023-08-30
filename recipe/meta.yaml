@@ -1,4 +1,4 @@
-{% set version = "0.1-4" %}
+{% set version = "0.2-0" %}
 {% set posix = 'm2-' if win else '' %}
 {% set native = 'm2w64-' if win else '' %}
 
@@ -10,11 +10,11 @@ source:
   url:
     - {{ cran_mirror }}/src/contrib/Rlgt_{{ version }}.tar.gz
     - {{ cran_mirror }}/src/contrib/Archive/Rlgt/Rlgt_{{ version }}.tar.gz
-  sha256: b44c81715d9a38765378b1a347ee7de62dac5b767794304b2d649ce1da7fd086
+  sha256: 50f95bc7d14f557c96f92c194a35ba0b0b3fa0bc9b966e5790cee07bcdc00a3a
 
 build:
   merge_build_host: true  # [win]
-  number: 2
+  number: 0
   # Makevars.win:18: recipe for target 'stan_files/SGT.cc' failed
   skip: true  # [win]
   rpaths:
