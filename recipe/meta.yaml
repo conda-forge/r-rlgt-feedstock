@@ -1,4 +1,4 @@
-{% set version = "0.1-4" %}
+{% set version = "0.2-0" %}
 {% set posix = 'm2-' if win else '' %}
 {% set native = 'm2w64-' if win else '' %}
 
@@ -10,11 +10,11 @@ source:
   url:
     - {{ cran_mirror }}/src/contrib/Rlgt_{{ version }}.tar.gz
     - {{ cran_mirror }}/src/contrib/Archive/Rlgt/Rlgt_{{ version }}.tar.gz
-  sha256: b44c81715d9a38765378b1a347ee7de62dac5b767794304b2d649ce1da7fd086
+  sha256: 50f95bc7d14f557c96f92c194a35ba0b0b3fa0bc9b966e5790cee07bcdc00a3a
 
 build:
   merge_build_host: true  # [win]
-  number: 2
+  number: 0
   # Makevars.win:18: recipe for target 'stan_files/SGT.cc' failed
   skip: true  # [win]
   rpaths:
@@ -28,8 +28,13 @@ requirements:
     - {{ compiler('cxx') }}            # [not win]
     - {{ compiler('m2w64_cxx') }}      # [win]
     - {{ posix }}filesystem        # [win]
-    - {{ posix }}make
     - {{ posix }}sed               # [win]
+    - {{ posix }}grep              # [win]
+    - {{ posix }}autoconf
+    - {{ posix }}automake          # [not win]
+    - {{ posix }}automake-wrapper  # [win]
+    - {{ posix }}pkg-config
+    - {{ posix }}make
     - {{ posix }}coreutils         # [win]
     - {{ posix }}zip               # [win]
     - cross-r-base {{ r_base }}    # [build_platform != target_platform]
@@ -38,22 +43,26 @@ requirements:
     - r-bh >=1.66.0
     - r-rcpp >=0.12.0
     - r-rcppeigen >=0.3.3.3.0
+    - r-rcppparallel >=5.0.2
     - r-stanheaders >=2.18.0
     - r-forecast
     - r-rstan >=2.18.1
     - r-rstantools
     - r-sn
+    - r-truncnorm
   run:
     - r-base
     - {{ native }}gcc-libs         # [win]
     #- r-bh >=1.66.0
     - r-rcpp >=0.12.0
     - r-rcppeigen >=0.3.3.3.0
+    - r-rcppparallel >=5.0.2
     #- r-stanheaders >=2.18.0
     - r-forecast
     - r-rstan >=2.18.1
     - r-rstantools
     - r-sn
+    - r-truncnorm
 
 test:
   commands:

@@ -3,6 +3,7 @@ About r-rlgt-feedstock
 
 Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/r-rlgt-feedstock/blob/main/LICENSE.txt)
 
+
 About r-rlgt
 ------------
 
@@ -11,6 +12,7 @@ Home: https://github.com/cbergmeir/Rlgt
 Package license: GPL-3.0-only
 
 Summary: An implementation of a number of Global Trend models for time series forecasting that are Bayesian generalizations and extensions of some Exponential Smoothing models. The main differences/additions include 1) nonlinear global trend, 2) Student-t error distribution, and 3) a function for the error size, so heteroscedasticity. The methods are particularly useful for short time series. When tested on the well-known M3 dataset, they are able to outperform all classical time series algorithms. The models are fitted with MCMC using the 'rstan' package.
+
 About r-rlgt
 ------------
 
