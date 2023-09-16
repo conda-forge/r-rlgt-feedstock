@@ -1,4 +1,4 @@
-{% set version = "0.2-0" %}
+{% set version = "0.2-1" %}
 {% set posix = 'm2-' if win else '' %}
 {% set native = 'm2w64-' if win else '' %}
 
@@ -10,7 +10,7 @@ source:
   url:
     - {{ cran_mirror }}/src/contrib/Rlgt_{{ version }}.tar.gz
     - {{ cran_mirror }}/src/contrib/Archive/Rlgt/Rlgt_{{ version }}.tar.gz
-  sha256: 50f95bc7d14f557c96f92c194a35ba0b0b3fa0bc9b966e5790cee07bcdc00a3a
+  sha256: 17a4fda1740dba3478baad5ba992b1f5b7dbbb503e8bbaa345cd14e0a08e3843
 
 build:
   merge_build_host: true  # [win]
