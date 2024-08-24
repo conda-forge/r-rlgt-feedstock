@@ -1,6 +1,5 @@
 {% set version = "0.2-2" %}
 {% set posix = 'm2-' if win else '' %}
-{% set native = 'm2w64-' if win else '' %}
 
 package:
   name: r-rlgt
@@ -13,10 +12,10 @@ source:
   sha256: ffb75ed4e7008011ab055e2ffd50a274f00348814357f95a3063099e397543b0
 
 build:
-  merge_build_host: true  # [win]
-  number: 0
+  number: 1
   # Makevars.win:18: recipe for target 'stan_files/SGT.cc' failed
-  skip: true  # [win]
+  # Checking windows to see if it passes. Uncomment the line if it fails.
+  # skip: true  # [win]
   rpaths:
     - lib/R/lib/
     - lib/
@@ -35,7 +34,7 @@ requirements:
     - {{ posix }}autoconf
     - {{ posix }}automake          # [not win]
     - {{ posix }}automake-wrapper  # [win]
-    - {{ posix }}pkg-config
+    - pkg-config
     - {{ posix }}make
     - {{ posix }}coreutils         # [win]
     - {{ posix }}zip               # [win]
@@ -54,7 +53,6 @@ requirements:
     - r-truncnorm
   run:
     - r-base
-    - {{ native }}gcc-libs         # [win]
     #- r-bh >=1.66.0
     - r-rcpp >=0.12.0
     - r-rcppeigen >=0.3.3.3.0
