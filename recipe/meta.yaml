@@ -1,4 +1,4 @@
-{% set version = "0.2-2" %}
+{% set version = "0.2-3" %}
 {% set posix = 'm2-' if win else '' %}
 
 package:
@@ -9,10 +9,10 @@ source:
   url:
     - {{ cran_mirror }}/src/contrib/Rlgt_{{ version }}.tar.gz
     - {{ cran_mirror }}/src/contrib/Archive/Rlgt/Rlgt_{{ version }}.tar.gz
-  sha256: ffb75ed4e7008011ab055e2ffd50a274f00348814357f95a3063099e397543b0
+  sha256: 6862b1d78339a7d2bd3376df473f26e432f4296a2d915256d7e27a7b95f4090c
 
 build:
-  number: 1
+  number: 0
   # Makevars.win:18: recipe for target 'stan_files/SGT.cc' failed
   # Checking windows to see if it passes. Uncomment the line if it fails.
   # skip: true  # [win]
