@@ -12,7 +12,7 @@ source:
   sha256: 6862b1d78339a7d2bd3376df473f26e432f4296a2d915256d7e27a7b95f4090c
 
 build:
-  number: 0
+  number: 1
   # Makevars.win:18: recipe for target 'stan_files/SGT.cc' failed
   # Checking windows to see if it passes. Uncomment the line if it fails.
   # skip: true  # [win]
